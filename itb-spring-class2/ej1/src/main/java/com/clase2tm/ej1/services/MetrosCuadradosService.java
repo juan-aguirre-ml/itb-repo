@@ -13,7 +13,7 @@ public class MetrosCuadradosService {
 
     public static AreaDTO getArea( CasaDTO casa){
         AreaDTO area = new AreaDTO();
-        ArrayList<HabitacionDTO> habs = new ArrayList<>(casa.getHabitaciones());
+        ArrayList<HabitacionDTO> habs = new ArrayList<HabitacionDTO>(casa.getHabitaciones());
         casa.setHabitaciones(habs);
         area.setNombre(casa.getNombre());
         area.setDireccion(casa.getDireccion());

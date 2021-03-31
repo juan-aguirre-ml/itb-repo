@@ -8,12 +8,12 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class Diploma {
+public class DiplomaDTO {
     private String nombre;
     private float promedio;
     private String mensaje;
 
-    public Diploma(String nombre, float promedio) {
+    public DiplomaDTO(String nombre, float promedio) {
         this.nombre=nombre;
         this.promedio = promedio;
         if (promedio>=9){

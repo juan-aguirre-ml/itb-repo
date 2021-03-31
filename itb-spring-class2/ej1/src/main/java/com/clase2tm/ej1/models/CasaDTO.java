@@ -5,13 +5,14 @@ import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.clase2tm.ej1.models.HabitacionDTO;
 
 @Data
 @AllArgsConstructor
 public class CasaDTO {
     private String nombre;
     private String direccion;
-    private List<HabitacionDTO> habitaciones;
+    private ArrayList<HabitacionDTO> habitaciones;
 
     public String getNombre() {
         return nombre;
