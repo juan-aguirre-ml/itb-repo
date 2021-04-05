@@ -38,6 +38,19 @@ public class LinkTrackerServiceImple implements LinkTrackerService {
     }
 
     @Override
+    public String redirectLink(int linkId, String password) throws InvalidURLException {
+        LinkDTO link = linksRepository.getLinkById(linkId);
+        if (link != null && link.isValid()){
+            if (password.equals(link.getPassword()))
+                return link.getUrl();
+            else
+                return null;
+        }
+        else
+            throw new InvalidURLException();
+    }
+
+    @Override
     public LinkMetricDTO metricsLink(int linkId) {
         LinkDTO link = linksRepository.getLinkById(linkId);
         return new LinkMetricDTO(link.getMetrics().get(), link.getUrl(), link.getLinkId());

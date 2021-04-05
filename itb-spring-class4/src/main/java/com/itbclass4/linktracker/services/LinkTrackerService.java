@@ -9,6 +9,8 @@ public interface LinkTrackerService {
     public int createLink(LinkDTO link) throws InvalidURLException;
 
     public String redirectLink(int linkId);
+    public String redirectLink(int linkId, String password) throws InvalidURLException;
+
 
     public LinkMetricDTO metricsLink(int linkId);
 

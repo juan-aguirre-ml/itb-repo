@@ -3,6 +3,7 @@ package com.itbclass4.linktracker.controllers;
 import com.itbclass4.linktracker.dtos.ErrorDTO;
 import com.itbclass4.linktracker.dtos.LinkDTO;
 import com.itbclass4.linktracker.exceptions.InvalidURLException;
+import com.itbclass4.linktracker.exceptions.InvalidURLIdException;
 import com.itbclass4.linktracker.services.LinkTrackerService;
 import com.itbclass4.linktracker.utils.UrlValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,4 +46,12 @@ public class LinkTrackerController {
         errorDTO.setMessage("The URL " + errorException.getMessage() + " is invalid");
         return new ResponseEntity<>(errorDTO, HttpStatus.BAD_REQUEST);
     }
+    @ExceptionHandler(value = {InvalidURLIdException.class})
+    public ResponseEntity<ErrorDTO> handleException(InvalidURLIdException errorException){
+        ErrorDTO errorDTO = new ErrorDTO();
+        errorDTO.setName("Invalid ID");
+        errorDTO.setMessage("The ID " + errorException.getMessage() + " is invalid");
+        return new ResponseEntity<>(errorDTO, HttpStatus.BAD_REQUEST);
+    }
+
 }

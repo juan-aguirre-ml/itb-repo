@@ -2,12 +2,14 @@ package com.itbclass4.linktracker.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class LinkDTO {
 
     private String url;
